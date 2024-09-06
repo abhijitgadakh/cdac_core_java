@@ -1,0 +1,316 @@
+-Why Java?
+
+1. Platform/Architecture Independent (WORA- write once run anywhere)
+	- Your file ---(javac)--> .class file ---> JDK --->Your System
+	- .class file machine independent and JVM machine dependent
+	- Java is Platform/Architecture, Database and also Server Independent
+
+2. Simple & Robust
+	- concepts and syntax is simpler than other Languages
+	- No pointer arithmatics
+
+3. Secure
+	- JVM/Spring Security has internal Security manager to provide security
+
+4. Auto Memory Management
+	- Memory Management taken care by Java (Garbage Collector)
+
+5. Inherent Multi Threaded Support
+
+6. Object Oriented Support
+	- Java is not 100% Object Oriented lang.
+	- But support abstraction, encapsulation, inheritance, and polymorphism
+
+7. Excellent IO Support
+8. inherent Network Support for TCP/IP, UDP/IP Programming & for URLs
+9. Support Functional Programming(from Java 8)
+
+-----------------------------------------------------------------------------------------
+
+Question: can you compile java code without main method? - Yes (but you cannot run)
+
+-----------------------------------------------------------------------------------------
+
+Java 1.8 = Java SE 8
+
+-----------------------------------------------------------------------------------------
+
+public 	-> access specifier (can be acess from anywhere in application)
+static 	-> JVM don't need object/instance of class to call static method
+void 	-> the method which returns nothing
+main 	-> the method JVM look for to start the execution
+String[] args -> to pass command line argument args can be anything (name of the string array)
+
+-----------------------------------------------------------------------------------------
+pacakage java.lang -> default package which is implicitly available
+
+method declaration and method defination
+
+method declaration -> public static void main(String[] args)
+method defination -> all the code inside { } method block
+
+-----------------------------------------------------------------------------------------
+
+conversion from string to Integer -> Integer.parseInt()
+conversion from string to Double -> Double.parseDouble()
+
+-----------------------------------------------------------------------------------------
+JDK Java Development Kit
+JRE Java Runtime Environment
+JVM Java Virtual Machine
+
+
+JDK ->  1. Java Dev Tool (javac, java, jar, etc.)
+			
+	2.Java Runtime Env->	 i. Java API Lib 
+				    (JAR-java archival format, bundled packaged classes e.g. java.lang, java.util, java.io)
+
+				ii. JVM 
+				   (interpreter to convert platform independent BiteCode to platform specific NativeCode
+				    Load & Execute
+				    JIT
+				    Garbage Collector)
+-----------------------------------------------------------------------------------------
+
+rt.jar -> all main jar file where all core apis located (rt->Run Time)
+
+-----------------------------------------------------------------------------------------
+
+JVM only load the classes which are required (mentioned in code)
+
+java.util.* -> meaning, tell JVM application should be able to use any classes/interfaces/enums from java.util.
+		But JVM will only load which are getting used
+
+-----------------------------------------------------------------------------------------
+
+System.out.println();
+
+System-> class from java.lang
+out -> static data member (property) of System class (out is object of class PrintStream)
+println -> method of object out
+-----------------------------------------------------------------------------------------
+
+3 static data members of class System:
+
+1. out-> Standard output
+2. in-> Standard input
+3. err-> Standard error output
+
+-----------------------------------------------------------------------------------------
+
+Scanner is class used to read any text data
+It is text based parser which parse primitive types and strings using regular expressions
+input coming from keyboard (System.in) or file(io) or Socket
+
+after scanner object get created it has internal buffer which can store upto ~1k characters (empty buffer initially)
+
+default delimeter for scanner white space
+
+what is token? - the string which gets read by scanner from terminal
+
+
+-----------------------------------------------------------------------------------------
+
+Blocking and non-blocking Methods(APIs)
+
+-----------------------------------------------------------------------------------------
+
+How Java code runs
+.java file -> jdk(java compile) -> .class(platform independent byte code) -> JVM -> Operating system
+-----------------------------------------------------------------------------------------
+
+
+data types
+(Check 05 image from day 1 notes)
+
+1. Primitive Data Types			2. Reference Data Types
+(Value holding data type)		(Address holding data type)
+
+
+1. Primitive Data Types
+	a. boolean type
+		- holds true and false (not 0 and 1)
+		- may occupies memory as per the JVM specification (generally 1 bit)
+		- which variable one JVM to another JVM
+
+	b. numeric type(non-boolean type)
+		i. Charater type
+			char
+			- occupies 2 bytes 
+			- unsigned character
+			- 2 bytes beacause java supports unicode char encoding.
+
+		ii. Interger type 
+			- all in this type are signed character using 2's compliment format byte
+			- signed bit is most significant bit(MSB)
+			- if MSB is 0 -> positive number. if MSB is 1 -> negative number
+			
+			Interger types
+				a. byte (occupies 1 bytes) 	range (-128 to 127)
+				b. short (occupies 2 bytes) 	range (-2^15 to 2^15-1)
+				c. int (occupies 4 bytes)	range (-2^31 to 2^31-1)
+				d. long (occupies 8 bytes)	range (-2^63 to 2^63-1)
+
+
+		iii. Floating type 
+			- all in this type are signed character using 2's compliment format byte
+			- signed bit is most significant bit(MSB)
+			- if MSB is 0 -> positive number. if MSB is 1 -> negative number
+			
+			Floating types
+				a. float (occupies 4 bytes) 	range (-128 to 127)
+				b. double (occupies 8 bytes) 	range (-2^15 to 2^15-1)
+				(Check 06 data representation of float and double from day 1 notes)
+
+
+lower nibble and upper nibble
+
+
+2. Reference Data Types
+holds adreess of object created dynamically(in the runtime) on heap area. memory as per JVM specifications
+
+	a. class type reference
+	b. interface type reference
+	c. Array type reference
+
+
+-----------------------------------------------------------------------------------------
+Declaration 
+	int num1;
+
+Assignment
+	num1 = 10;
+
+initalization
+	int num2 = 20;
+	num2 = num;
+	int num3 = num;
+
+
+-----------------------------------------------------------------------------------------
+Naming Conventions
+
+Rules on identifiers (variables methods class names)
+can start with letter, $, _ but cannot start with nummber
+
+- class, interface, enum -> first letter uppercase then follow camelcase eg. HelloWorld
+
+- data members, methods -> first word's first letter lowercase then follow camelcase eg. int firstNumber; public void calcSalary(...){...}
+
+- constant/final -> all uppercase eg. PI
+
+-----------------------------------------------------------------------------------------
+
+Access Specifier
+- private (can be access within class only)
+- default (can be access within package only)
+- protected (can be access within package or outside package but bound by inheritance)
+- public (can be access anywhere)
+
+Legal class level Access Specifier
+- default (can be access within package only)
+- public (can be access anywhere in application)
+
+
+-----------------------------------------------------------------------------------------
+one .java file can have multiple classes in it
+when compile there will be class file for each class in above .java file
+
+e.g.
+
+FILE NAME- Test.java
+4 classes written in Test.java
+class A{} class B{} class C{} class D{}
+
+when you compile there will be 4 .class files -> A.class, B.class, C.class, D.class (THERE WILL BE NO Test.class file
+
+
+Basic Rules
+
+1. in .java file you can have any number of classes
+2. but there can be only one (or zero) public class allows
+3. if there is a public class in that file. then, file name should match with that public class
+4. java compiler doesnot allow accessing un uninitilized data-member or variables
+5. method local variable don't get any default values. 
+6. But class based object's datamember will get initialized with default values
+-----------------------------------------------------------------------------------------
+ 
+byte b1 = 10;
+byte b2 = 20;
+
+byte b3 = b1 + b2;
+
+this code will give compile time error (check image "07 Conversion regarding Primitive types" from Day 1 Notes)
+
+any arithmatic opr between byte/short/int -> result will be in int (automatic promotion rule, automatic conversion/ Widing)
+to solve either make b3 int or (byte)(b1+b2)narrowing conversion
+
+-----------------------------------------------------------------------------------------
+automatic promotion / automatic conversion / Widening -> Compiler do this conversion if required
+byte -> short -> int -> long -> float -> double
+char -> int
+
+IMPORTANT
+long -> float is automatic promotion because float contain larger magnitude/range
+
+
+forced promotion / forced conversion / narrowing conversion -> proggrammer need to do this onversion
+-----------------------------------------------------------------------------------------
+Type casting -> (int)33.44
+-----------------------------------------------------------------------------------------
+
+JVM Architecture
+
+1. file.java
+
+2. javac compiler generate "file.class"
+
+3. Execution
+	-when you run .class file (java HelloWorld) OS will give some memory to JVM so jvm can perform operations
+	- CLASS LOADER
+		i. all required classes will get loaded
+	- RUN-TIME DATA AREAS
+	  (METHOD AREA MetaSpace | Heap | Stack | pc registers | Native Method stacks)
+
+
+
+-----------------------------------------------------------------------------------------
+
+1 METHOD AREA MetaSpace per JVM
+	- stores all loaded class info -> all classes, static members, constructor and methods
+	- one 1 single METHOD AREA per JVM
+
+
+2 Java Heap
+	- Stores all dynamically created java objects
+	- one 1 single METHOD AREA per JVM
+
+[-------STATE On HEAP and Behaviour on METHOD AREA-----]
+
+3 Java Stacks (stack made up of  stack frames)
+	- stores all loaded local method variable info (Method variables, returning values, parameter values)
+	- 1 copy METHOD AREA per Thread
+
+
+Java Implicitly starts two threads main thread and GC thread
+
+main thread - job of the main thread is search for main method and invoke it
+
+
+4 PC Registers (program counter Register)
+	- this area stores address of instructions
+	- one per thread
+
+5 Native Method stack
+	- it is written in platform specific manner
+	- if java appliction calling any methods/function of another lang (e.g. python/c++/c) that info pushed on this stack
+	- platform specific local method variable info
+
+
+ALL THESE MEMORY AREAS MANAGED BY JVM
+
+-----------------------------------------------------------------------------------------
+EXECUTION Engine
+	- means JVM, which internally consist of java interpreter (to translate .class file -> platform independent to platform specific bite code)
+
+-----------------------------------------------------------------------------------------

@@ -1,0 +1,5 @@
+ArrayIndexOutOfBoundsException
+NullPointerException (when string is null)
+NumberFormatExeception (when JVM unable to convert string to double/int)
+InputMisMatchException (while Scanner Reading string and tries to convert into required type)
+NullPointerException (when trying to access object is null)

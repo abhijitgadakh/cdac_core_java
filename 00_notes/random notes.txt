@@ -1,0 +1,8 @@
+----> why scanner need to close? [using sc.close() method]
+
+when scanner is attached to file devices it is important to close the scanner. otherwise file handles will kept open programmer or user may have problem to read and write date in those files
+
+
+------> getClass()
+this will tell you the class name from which associated object is created
+this is object class's non-static method 

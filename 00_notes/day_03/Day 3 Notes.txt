@@ -1,0 +1,118 @@
+DEFAULT VALUES FOR PRIMITIVE VALUES
+
+Boolean false
+char 0
+byte 0
+short 0
+int 0
+long 0.0
+float 0.0
+double 0.0
+
+DEFAULT VALUES FOR REFRENCE TYPE VALUES null
+
+---------------------------------------------------------------------
+
+Packages
+
+collection of functionally similar classes and interfaces
+
+
+Why need of Packages
+- to separate functionally similar classes
+- avoid name collisions 
+- finer control over access specifier.
+
+
+to create package - package packagename (should be always at top)
+
+package  name should be same as folder name
+
+
+TOP OF THE PACKAGE HIERARCHY
+FULLY QUALIFIED CLASS NAME
+
+
+practice package refer image res/day_03/02 packages objective
+
+
+---------------------------------------------------------------------
+
+Access specifiers
+refer image res/day_03/03 Access specifiers
+
+
+private - within that class only
+default - with that package only
+protected - with that package and outside need to be by inheritance
+public - anywhere in application
+
+
+---------------------------------------------------------------------
+Arrays
+refer image day_03/04 arrays.png
+
+class names of arrays
+
+[ - this represents dimension 
+    [ - one dimension
+    [[ - two dimension
+    [[[ - three dimension
+
+Character after [ represent data type of elements in array
+I - int
+D - double
+Z - boolean
+
+
+- one dimensional Int array   [I
+- two dimensional Int array   [[I
+- three dimensional Int array [[[I
+
+- one dimensional double array   [D
+- two dimensional double array   [[D
+- three dimensional double array [[[D
+
+- one dimensional boolean array   [Z
+- two dimensional boolean array   [[Z
+- three dimensional boolean array [[[Z
+
+
+-Length of array is fixed and doesn't affect class of array
+- superclass will be java.lang.Object (Implicitly)
+
+
+
+double[] data;
+data = new double[sc.nextInt()];
+
+Line-I: double[] data;
+//array type of reference variable and will get memory allocated in main stack frame
+//if syso data-compile time error saying may not be initialised
+
+Line-II: data = new double[sc.nextInt()];
+// class [D gets load in method area
+// one object of class [D gets created on heap with all elements having values set to 0.0
+
+when you create an array object the state of array object is initialised
+
+default values of elements of an array
+double -> 0.0
+Boolean -> false
+int -> 0
+object -> null
+
+
+for-each 
+-> enhanced for loop
+-> automatically goes from 1st element to last element with step size of +1
+
+to get class name of an array -> arr.getObject()
+
+
+
+
+
+
+
+

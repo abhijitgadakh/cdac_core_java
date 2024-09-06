@@ -1,0 +1,7 @@
+java 8 onward - JAVA supports Functional Programming from 
+
+before java8 method area called ass permanent genration space (perm-gen-space) limited space.
+
+java 8 onward Method area called as Metaspace (it got space from ram to avoid out of memory error)
+
+java 9 onward modules (collections of packages)

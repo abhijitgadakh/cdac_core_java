@@ -1,0 +1,109 @@
+----------- Read image 01 Class and Object
+
+CLASS
+- Java is fully encapsulated prog. lang (you can't write any code outside a class)
+- class is UDT(User define Type) or BluePrint or Template
+- Objects are created from class
+- it represent set of properties (data) and actions (methods) that are common to all objects of one type
+
+
+class declaration
+1. access specifiers (public or default)
+2. class name (first letter capitial then camel casing)
+3. Superclass(if any) using keyword extends
+4. Interfaces(if any) using keyword implements
+
+EXAMPLE: public clas EmployeeDetails extends Person implements Career{}
+
+5. class body ( encapsulated between {...} )
+6. constructor: to initalize new objects
+7. feilds(variables/states)
+8. Methods(actions/behaviour)
+
+
+OBJECT
+1. Basic unit of oop and represent real life entities
+2. each object consist of:
+	  i. state (instance variables / data members of an object) non static
+	 ii. behaviour (methods) action upon state/data
+	iii. identities provides unique identity to each object
+3. creating object: 
+	using keyword "new" object gets  created. and this new keyword returns reference to the memory in which object gets created. new keyword also invokes class constructor
+
+
+CONSTRUCTOR
+- Special method which has same name as class
+- no explicit return type but returns reference of a generated object
+- constructor can be parameterized or parameterless
+- parameterized constructor used to initilize state of an object
+
+- java will supply default constructor if there is no constructor
+  but if any constructor is present(written by programmer) default constructor will not be accessible
+- same class can have multiple constructor within same class (overloaded constructor)
+
+-----------------------
+
+Solve assignment "02 Assignment"
+
+-----------------------
+
+Tight Encapsulation -> means outside code should not be able to access
+
+-----------------------
+
+---this Keyword---
+
+- this keyword refers to current object
+- used to un-hide/acess instance variable from method local variable
+- also use to invoke constuctor of a same class
+
+-----------------------
+
+Memory Diagram for assignment "02 Assignment"
+
+
+-----------------------
+
+try following code with Memory Diagram
+Box box2 = new Box(sc.nextDouble(),sc.nextDouble(),sc.nextDouble());
+Box b3 = b1;
+b1 = null;
+b3 = null;
+
+--- garbage collector will mark which object ---
+
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+
+garbage collection
+
+- only for objects / heap area
+- mark and then delete un-apporachable objects from heap
+when you run java file two threads get created
+1. main thread -> foreground thread which search and exwcute main method
+2. GC (garbage collectOR) -> Daemon thread/Background thread which get chance to run as per JVM instructions  which removes un-apporachable objects from heap area only.
+
+Triggers for marking object to garbage collection
+1. nullifying all valid references.
+Box box1 = new Box();
+box1 = null;
+
+2. re-assign to another object
+Box box1 = new Box();
+Box box2 = new Box();
+box1 = box2; // previous values of box1 will be marked to garbage collection
+
+3. objects created in method (which are not part of returned value)
+
+
+4. Programmer can only request for garbage collection (for objects which are already marked) by System.gc(); Method.
+
+protected void finalize() throws Throwable
+GC Automatically called this methods on the object before garbage collection. 
+
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
