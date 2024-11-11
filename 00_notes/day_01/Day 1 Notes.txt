@@ -62,14 +62,15 @@ JVM Java Virtual Machine
 
 JDK ->  1. Java Dev Tool (javac, java, jar, etc.)
 			
-	2.Java Runtime Env->	 i. Java API Lib 
-				    (JAR-java archival format, bundled packaged classes e.g. java.lang, java.util, java.io)
+		2.Java Runtime Env->	 
+			i. Java API Lib 
+				(JAR-java archival format, bundled packaged classes e.g. java.lang, java.util, java.io)
 
-				ii. JVM 
-				   (interpreter to convert platform independent BiteCode to platform specific NativeCode
-				    Load & Execute
-				    JIT
-				    Garbage Collector)
+			ii. JVM 
+				(interpreter to convert platform independent BiteCode to platform specific NativeCode
+				Load & Execute
+				JIT
+				Garbage Collector)
 -----------------------------------------------------------------------------------------
 
 rt.jar -> all main jar file where all core apis located (rt->Run Time)
